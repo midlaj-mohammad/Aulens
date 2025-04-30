@@ -10,106 +10,113 @@
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-
   <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
- .user-card-container {
+ 
+ 
+    .user-card-container {
+      margin-top: 160px;
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 40px 30px;
   justify-content: center;
 }
-
-.user-card {
-   
-  width: 300px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.user-card:hover {
-  transform: translateY(-5px);
-}
-
-.user-img-box img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.user-card-body {
-  padding: 20px;
-  text-align: center;
-}
-
-.user-card-body h3 {
-  margin: 10px 0 5px;
-  font-size: 20px;
-  color: #222;
-}
-
-.user-card-body p {
-  margin: 0;
-  color: #555;
-  font-weight: 500;
-}
-
-.user-card-body span {
-  display: block;
-  margin: 10px 0;
-  font-size: 14px;
-  color: #888;
-}
-
-.user-btn-group {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.user-btn {
-  padding: 8px 14px;
-  background: #5e35b1;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.user-btn:hover {
-  background: #00c853; /* green hover */
-}
-@media (max-width: 768px) {
-  .user-card{
-    display: flex;
-    flex-direction: row !important;
-  }
-   
-  }
-
+ 
+ 
+    .user-card {
+      background-color: var(--bg-dropdown);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      margin-bottom: 40px;
+      margin-right: 40px;
+    }
+ 
+    .user-card:hover {
+      transform: translateY(-5px);
+    }
+ 
+    .user-img-box {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+ 
+    .user-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+ 
+    .user-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+ 
+    .user-card-body h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+ 
+    .user-card-body p {
+      margin: 0;
+      color: var(--btn-hover);
+      font-size: 14px;
+    }
+ 
+    .user-card-body span {
+      font-size: 13px;
+      color: #ccc;
+    }
+ 
+    @media (max-width: 768px) {
+      .user-card {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+      }
+ 
+      .user-img-box {
+        width: 40%;
+        height: auto;
+      }
+ 
+      .user-img-box img {
+        height: 100%;
+        object-fit: cover;
+      }
+ 
+      .user-card-body {
+        width: 60%;
+        padding: 16px;
+        justify-content: center;
+      }
+    }
 </style>
+
 </head>
 <body>
 
     <header class="header">
         <div class="container wrapper">
           <div class="header__logo">
-           <a href="/"> <img class="logo-au" src="./Assetss/logo.png" alt=""></a>
+              <a href="index.html"> <img class="logo-au" src="./Assetss/logo.png" alt=""></a>
           </div>
       
           <nav class="header__nav">
             <ul class="nav__list">
-              <li class="nav__item"><a href="#" class="nav__link nav__link--active">Upload Photo</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Adhaar</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Scan Photo</a></li>
+              <li class="nav__item"><a href="/uploadimage.html" class="nav__link ">Upload Photo</a></li>
+              <li class="nav__item"><a href="e-kyc.html" class="nav__link">e-KYC</a></li>
+              <li class="nav__item"><a href="/scanphoto.html" class="nav__link">Scan Photo</a></li>
               <li class="nav__item dropdown menu-item-with-dropdown">
                 <a href="#" class="nav__link dropdown__toggle">Menu <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown__menu meubar-drop" data-aos="fade-down">
@@ -138,7 +145,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#">Upload Photo</a>
-    <a href="#">Adhaar</a>
+    <a href="e-kyc.html">e-KYC</a>
     <a href="#">Scan Photo</a>
   
     <!-- Dropdown for mobile -->
@@ -152,72 +159,38 @@
       </ul>
     </div>
   </div>
-  <div class="container " style="margin-top: 60px;">
-    <h1>User Details</h1>
-</div>
-  <section class="card-details-section">
-    
+  
+  <div class="user-card-container">
    
-    <div class="container user-card-container">
-
-  
-      <!-- User Card 1 -->
-      <div class="user-card">
-        <div class="user-img-box">
-          <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg?uid=R160276996&ga=GA1.1.740747928.1709181991&w=740" alt="User 1">
-        </div>
-        <div class="user-card-body">
-          <h3>John Doe</h3>
-          <p>Software Engineer</p>
-          <span>john@example.com</span>
-          <div class="user-btn-group">
-            <button class="user-btn">Profile</button>
-            <button class="user-btn">Message</button>
-          </div>
-        </div>
+    <div class="user-card">
+      <div class="user-img-box">
+        <img src="https://img.freepik.com/free-photo/morskie-oko-tatry_1204-510.jpg" alt="John Doe">
       </div>
-  
-      <!-- User Card 2 -->
-      <div class="user-card">
-        <div class="user-img-box">
-          <img src="https://img.freepik.com/free-photo/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai_188544-15662.jpg?uid=R160276996&ga=GA1.1.740747928.1709181991&w=740" alt="User 2">
-        </div>
-        <div class="user-card-body">
-          <h3>Jane Smith</h3>
-          <p>UI/UX Designer</p>
-          <span>jane@example.com</span>
-          <div class="user-btn-group">
-            <button class="user-btn">Profile</button>
-            <button class="user-btn">Message</button>
-          </div>
-        </div>
+      <div class="user-card-body">
+        <h3>John Doe</h3>
+        <p>Software Engineer</p>
+        <span>john@example.com</span>
       </div>
-  
-      <!-- User Card 3 -->
-      <div class="user-card">
-        <div class="user-img-box">
-          <img src="https://img.freepik.com/free-photo/misurina-sunset_181624-34793.jpg?uid=R160276996&ga=GA1.1.740747928.1709181991&w=740" alt="User 3">
-        </div>
-        <div class="user-card-body">
-          <h3>Alex Kim</h3>
-          <p>Product Manager</p>
-          <span>alex@example.com</span>
-          <div class="user-btn-group">
-            <button class="user-btn">Profile</button>
-            <button class="user-btn">Message</button>
-          </div>
-        </div>
-      </div>
-  
     </div>
-  </section>
-  
-  
-  
-
-
-
  
+   
+    <div class="user-card">
+      <div class="user-img-box">
+        <img src="https://img.freepik.com/free-photo/majestic-mountain-peak-tranquil-winter-landscape-generated-by-ai_188544-15662.jpg" alt="Jane Smith">
+      </div>
+      <div class="user-card-body">
+        <h3>Jane Smith</h3>
+        <p>UI/UX Designer</p>
+        <span>jane@example.com</span>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
   
   
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

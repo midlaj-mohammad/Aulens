@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aulens - Login</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-body: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      --glass-bg: rgba(26, 26, 26, 0.9);
+      --border-color: #5df15d;
+      --input-bg: rgba(255, 255, 255, 0.05);
+      --text-color: #fff;
+      --text-muted: #aaa;
+      --text-hover: #5df15d;
+      --btn-primary: #5df15d;
+      --btn-hover: #4bd94b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Wix Madefor Text", sans-serif;
+    }
+
+    body {
+      background: var(--bg-body);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px 30px;
+      box-shadow: 0 0 20px rgba(93, 241, 93, 0.2);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logologin {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logologin img {
+      height: 60px;
+   
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--text-hover);
+      margin-bottom: 25px;
+      font-size: 1.8em;
+   
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .inputBox {
+      position: relative;
+    }
+
+    .inputBox i {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    .inputBox input {
+      width: 100%;
+      background: var(--input-bg);
+      color: var(--text-color);
+      padding: 14px 14px 14px 42px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    .inputBox input:focus {
+      border-color: var(--text-hover);
+      background-color: rgba(255, 255, 255, 0.08);
+      outline: none;
+      box-shadow: 0 0 8px var(--text-hover);
+    }
+
+    input[type="submit"] {
+      background: var(--btn-primary);
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: var(--btn-hover);
+      transform: translateY(-2px);
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+      margin-top: 15px;
+    }
+
+    .links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: var(--text-hover);
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logologin">
+      <img src="./Assetss/logo.png" alt="Aulens Logo">
+    </div>
+    <h2>Log in</h2>
+    <form class="form" action="#" method="post">
+      <div class="inputBox">
+        <i class="fa fa-user"></i>
+        <input type="text" name="username" required placeholder="Username">
+      </div>
+      <div class="inputBox">
+        <i class="fa fa-lock"></i>
+        <input type="password" name="password" required placeholder="Password">
+      </div>
+      <div class="inputBox">
+        <input type="submit" value="Log in">
+      </div>
+      <div class="links">
+        <a href="#">Forgot password?</a>
+        <a href="#">Create account</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
