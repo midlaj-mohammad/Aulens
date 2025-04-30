@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Aulens</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    .user-table-container {
+
+  margin: 60px auto;
+  background: #fff;
+  padding: 25px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.user-table-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+
+}
+
+.user-table thead {
+  background-color: #111312;
+
+}
+
+.user-table th,
+.user-table td {
+  text-align: center;
+  padding: 15px;
+  color: rgb(0, 0, 0) !important;
+}
+.user-table th{
+    color: rgb(255, 255, 255) !important;
+ 
+}
+
+.user-table tbody tr {
+  transition: background 0.3s;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.user-table img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit {
+  background-color: #111312;
+}
+
+.edit:hover {
+  background-color: #218838;
+}
+
+.delete {
+  background-color: #111312;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .user-table, .user-table thead, .user-table tbody, .user-table th, .user-table td, .user-table tr {
+    display: block;
+  }
+
+  .user-table thead tr {
+    display: none;
+  }
+
+  .user-table tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fefefe;
+  }
+
+  .user-table td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .user-table td::before {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-weight: bold;
+    color: #666;
+  }
+
+  .user-table td:nth-child(1)::before { content: "Name"; }
+  .user-table td:nth-child(2)::before { content: "Phone"; }
+  .user-table td:nth-child(3)::before { content: "Image"; }
+  .user-table td:nth-child(4)::before { content: "Edit"; }
+  .user-table td:nth-child(5)::before { content: "Delete"; }
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="container wrapper">
+          <div class="header__logo">
+              <a href="index.html"> <img class="logo-au" src="./Assetss/logo.png" alt=""></a>
+          </div>
+      
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="/uploadimage.html" class="nav__link ">Upload Photo</a></li>
+              <li class="nav__item"><a href="e-kyc.html" class="nav__link">e-KYC</a></li>
+              <li class="nav__item"><a href="/scanphoto.html" class="nav__link">Scan Photo</a></li>
+              <li class="nav__item dropdown menu-item-with-dropdown">
+                <a href="#" class="nav__link dropdown__toggle">Menu <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown__menu meubar-drop" data-aos="fade-down">
+                  <li><a href="/userguide.html">User Guide</a></li>
+                  <li><a href="/usedetails.html">Usage Statistics</a></li>
+                  <li><a href="#">Add User</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+      
+          <div class="header__cta">
+            <a href="#" class=" ">Change Password</a>
+            <a href="#" class="logout">Logout &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          </div>
+      
+          <!-- Hamburger for Mobile -->
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </header>
+      
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Upload Photo</a>
+    <a href="e-kyc.html">e-KYC</a>
+    <a href="#">Scan Photo</a>
+  
+    <!-- Dropdown for mobile -->
+    <div class="mobile-dropdown">
+      <a href="#" class="mobile-dropdown-toggle">Menu <i class="fas fa-chevron-down"></i></a>
+      <ul class="mobile-dropdown-menu">
+        <li><a href="#">User Guide</a></li>
+        <li><a href="#">Usage Statistics</a></li>
+        <li><a href="#">Add User</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+
+
+<!-- heree -->
+
+<div class="user-table-container container">
+    <h2>User List</h2>
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Image</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Farhan1</td>
+          <td>Not Provided</td>
+          <td><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>vgjdg</td>
+          <td>Not Provided</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>hhhhh</td>
+          <td>777</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>4we4rw755</td>
+          <td>Not Provided</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>ttt</td>
+          <td>777</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>jhgfh</td>
+          <td>mnmv</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>ffd</td>
+          <td>Not Provided</td>
+          <td><img src="https://via.placeholder.com/45" alt="User" /></td>
+          <td><button class="btn edit">Edit</button></td>
+          <td><button class="btn delete">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+    <div class="tak-pic-div " style="margin-bottom: 60px;">  <a class="btn btn--primary tak-btn">Submit</a></div>
+
+ 
+  
+  
+  
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Mobile toggle
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("show");
+    });
+
+
+
+    
+  </script>
+<script>
+  document.querySelector('.mobile-dropdown-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    const menu = document.querySelector('.mobile-dropdown-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
+
+  
+</body>
+</html>
